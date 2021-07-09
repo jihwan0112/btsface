@@ -139,15 +139,21 @@
 			</div>
 			<div class="file-upload-content">
 				<img class="file-upload-image" id="face-image" src="#" alt="your image" />
-				<p class="result-message"></p>
-				<div class="man-percent" id="label-container"></div>
+				<div id="loading" class="animated bounce">
+                	<div class="spinner-border" role="status">
+                    	<span class="sr-only"></span>
+                </div>
+				<p class="text-center">AI가 당신과 닮은 BTS 멤버를 찾고있습니다...</p>
+            </div>
+			<p class="result-message"></p>
+			<div class="man-percent" id="label-container"></div>
 				
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox_w7ie"></div>
+            <div class="addthis_inline_share_toolbox_w7ie"></div>
             
 
-				<div class="image-title-wrap">
-					<button type="button p-2" class="mb-10 try-again-btn" onclick="window.location.reload();">
+			<div class="image-title-wrap">
+				<button type="button p-2" class="mb-10 try-again-btn" onclick="window.location.reload();">
                     <span class="try-again-text">다른 사진으로 재시도</span>
 
 					</button>
@@ -167,8 +173,8 @@
 				<p>&copy; 송지환 2021. All Rights Reserved
 					
 				</p>
-				<div>참조: 조코딩 유튜브</div>
-				<div>개발자 이메일: jimmy-0112@naver.com</div>
+				<div class="myword">참조: 조코딩 유튜브</div>
+				<div class="myword">개발자 이메일: jimmy-0112@naver.com</div>
 			</div>
 		</footer>
 		<div id="webcam-container"></div>
@@ -235,6 +241,7 @@
 					init().then(function () {
 						console.log('hello');
 						predict();
+						$('#loading').hide();
 					});
 				} else {
 					removeUpload();
